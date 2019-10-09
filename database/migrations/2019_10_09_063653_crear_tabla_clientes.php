@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CrearTablaTipoContactos extends Migration
+class CrearTablaClientes extends Migration
 {
     /**
      * Run the migrations.
@@ -13,8 +13,11 @@ class CrearTablaTipoContactos extends Migration
      */
     public function up()
     {
-        Schema::create('tipo_contactos', function (Blueprint $table) {
+        Schema::create('clientes', function (Blueprint $table) {
             $table->bigIncrements('id');
+            $table->unsignedBigInteger('persona_id');
+            $table->foreign('persona_id')->references('id')->on('personas');
+            $table->boolean('activo');
             $table->timestamps();
         });
     }
@@ -26,6 +29,6 @@ class CrearTablaTipoContactos extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('tipo_contactos');
+        Schema::dropIfExists('clientes');
     }
 }
