@@ -15,7 +15,7 @@ class CrearTablaPersonas extends Migration
     {
         Schema::create('personas', function (Blueprint $table) {
             $table->bigIncrements('id');
-            $table->string('per_apellido', 50);
+            $table->string('per_apellido', 50); //->unique() para hacer seeders unicos
             $table->string('per_nombre', 50);
             $table->Integer('per_DNI');
             $table->timestamps();
