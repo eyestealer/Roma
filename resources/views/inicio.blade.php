@@ -1,0 +1,1 @@
+@include("theme.$theme.layout") <!-- INVOCA A LA VISTA LAYOUT -->

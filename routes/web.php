@@ -11,6 +11,12 @@
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+//Route::get('/', function () {
+//    return view('welcome');
+//});
+
+//Route::get('cliente/{nombre}', 'ClienteController@index')->name('clienteparametro'); // PARA PASAR PARAMETROS, EJ NOMBRE POR GET
+
+Route::view('cliente', 'cliente')->name('cliente');   //Para pasar vistas
+
+route::get('/','InicioController@index');
